@@ -1,7 +1,68 @@
+<!DOCTYPE html>
+<html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOGOS MOTORSPORT - India's First 500+ KM/H Hypercar | B 001 WHITE GHOST | Official Shop</title>
-<meta name="description" content="BOOGOS MOTORSPORT - India's first road-legal hypercar brand. B 001 WHITE GHOST 500+ KM/H. Official BOOGOS streetwear - W32 7000HP, Hum Darte Nahi T-shirts.">
-<meta name="keywords" content="BOOGOS, BOOGOS MOTORSPORT, B 001, Indian Hypercar, BOOGOS T-shirt, W32 Engine">
-<meta name="google-site-verification" content="paste-your-code-here">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOGOS - White Ghost B001</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:system-ui}
+.topbar{background:#000; padding:15px; text-align:center; border-bottom:1px solid #1a1a1a; position:sticky; top:0; z-index:100}
+.topbar img{height:65px; object-fit:contain; filter:drop-shadow(0 0 15px #00d4ff66)}
+.hero{position:relative; height:88vh; background:#000; overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute; inset:0; background:linear-gradient(to top, #000 5%, transparent 60%)}
+.hero-text{position:absolute; bottom:40px; left:0; right:0; text-align:center}
+.hero-text h1{font-size:48px; letter-spacing:8px}
+.hero-text p{color:#999; letter-spacing:3px; font-size:13px; margin-top:8px}
+.btn{background:#fff; color:#000; padding:14px 40px; border-radius:30px; text-decoration:none; font-weight:900; display:inline-block; margin-top:18px}
+.box{width:92%; max-width:1000px; margin:30px auto; background:#0a0a0a; border:1px solid #222; border-radius:20px; padding:18px}
+.box img{width:100%; border-radius:14px}
+.specs{display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:0 20px 30px}
+.s{background:#0a0a0a; border:1px solid #1a1a1a; border-radius:12px; padding:16px; text-align:center}
+.s b{color:#00d4ff}
+footer{text-align:center; padding:25px; color:#333; font-size:11px; border-top:1px solid #111}
+</style>
 </head>
+<body>
+
+<div class="topbar">
+<img src="logo.png" alt="BOOGOS LOGO">
+</div>
+
+<div class="hero">
+<img id="ghostMain" src="ghost-main.jpg" alt="White Ghost">
+<div class="hero-overlay"></div>
+<div class="hero-text">
+<h1>WHITE GHOST</h1>
+<p>B001 • 2040HP • GHOST MODE</p>
+<a href="#view360" class="btn">VIEW 360°</a>
+</div>
+</div>
+
+<div id="view360" class="box">
+<img id="rotateImg" src="ghost-main.jpg" alt="360">
+<p style="text-align:center;color:#555;font-size:11px;margin-top:10px">DRAG TO ROTATE • AUTO SPINNING</p>
+</div>
+
+<div class="specs">
+<div class="s">POWERTRAIN<br><b>2040 HP Quad Motor</b></div>
+<div class="s">0-100<br><b><1.6 Sec</b></div>
+<div class="s">TOP SPEED<br><b>350+ KM/H</b></div>
+<div class="s">EDITION<br><b>White Ghost B001</b></div>
+</div>
+
+<footer>© 2026 BOOGOS • WHITE GHOST • bogoos-code.github.io/Boogos</footer>
+
+<script>
+let r=0, drag=false, sx=0;
+const img=document.getElementById('rotateImg');
+let auto=setInterval(()=>{if(!drag){r+=0.5; img.style.transform=`perspective(1000px) rotateY(${r}deg)`}},30);
+img.addEventListener('mousedown',e=>{drag=true; sx=e.clientX; clearInterval(auto)});
+window.addEventListener('mouseup',()=>drag=false);
+window.addEventListener('mousemove',e=>{if(drag){r+=(e.clientX-sx)*0.8; img.style.transform=`perspective(1000px) rotateY(${r}deg)`; sx=e.clientX}});
+img.addEventListener('touchstart',e=>{drag=true; sx=e.touches[0].clientX; clearInterval(auto)});
+window.addEventListener('touchend',()=>drag=false);
+window.addEventListener('touchmove',e=>{if(drag){r+=(e.touches[0].clientX-sx)*0.8; img.style.transform=`perspective(1000px) rotateY(${r}deg)`; sx=e.touches[0].clientX}});
+</script>
+</body>
+  </html>
